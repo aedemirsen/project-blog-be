@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: project-blog-be
+  profiles:
+    active: dev

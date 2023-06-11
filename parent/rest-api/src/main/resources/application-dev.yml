@@ -1,0 +1,42 @@
+spring:
+  #deactivate spring security
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres_dev
+    username: postgres
+    password: p.postgres
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+    open-in-view: false
+  data:
+    web:
+      pageable:
+        max-page-size: 100
+        default-page-size: 10
+
+
+server:
+  servlet:
+    context-path: /api
+  port: 8080
+
+# Springdoc configurations
+springdoc:
+  api-docs:
+    path: /docs
+  swagger-ui:
+    path: /docs/ui
+
+logging:
+  level:
+    ROOT: INFO
+
+
+
